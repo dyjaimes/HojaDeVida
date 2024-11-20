@@ -1,0 +1,456 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    display: flex;
+    align-items: center;/* para alinear verticalmente 
+    /*justify-content: center;/* centrado de imagenes*/
+   background: #080e26;
+    padding: 0;
+    flex-direction: column;
+    font-family:  sans-serif;
+    /*font-family: kadwa;*/
+    -webkit-font-smoothing: antialiased;
+
+}
+
+.container-carousel{
+    position: relative;
+    height: 100vh;
+    border-radius: none;
+    overflow: hidden;
+}
+
+.carruseles{
+    width: 300%;/*(300 porque son 3 imagenes)para q ocupe el 100% del ancho del .cotainer-carousel*/
+    height: 100vh;
+    display: flex;/*las imagenes se coloquen una al lado de la otra*/
+    animation: slide 10s infinite;
+}
+.slider-section {
+    position: relative;
+    width: calc(100%/3);/*el calculo del 100 del contenedor carruseles para las imagenes*/
+    height: 100%;
+}
+.slider-section img{
+    width: 100%;/*tomo el 100% de container carrusel*/
+    height: 100vh;    
+    object-fit: cover;/*para que la imagen no pierda calidad*/
+    border-radius: none;
+}
+
+@keyframes slide{
+    0% { margin-left: 0%; }             /* Primera imagen visible */
+    20% { margin-left: 0%; }            /* Mantiene la primera imagen visible */
+    33.33% { margin-left: -100%; }      /* Segunda imagen visible */
+    53.33% { margin-left: -100%; }      /* Mantiene la segunda imagen visible */
+    66.66% { margin-left: -200%; }      /* Tercera imagen visible */
+    86.66% { margin-left: -200%; }      /* Mantiene la tercera imagen visible */
+    
+}
+
+.container{
+    max-width: 1200px;
+    margin:0 auto;
+   
+}
+.header{
+    min-height: 80px;
+    width: 100%;
+
+}
+
+.menu{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: 25px;
+    color: #fffffe;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.logo:hover{
+    color: #768cbf;
+}
+
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+    list-style-type: none; /*elimina los puntos de la lista*/
+}
+
+.menu .navbar ul li a{
+    font-size: 18px;
+    padding: 20px;
+    color: #fffffe;
+    display: block;
+    font-weight: bold;
+}
+
+.menu .navbar ul li a:hover{
+    color: #768cbf;
+}
+
+#menu{
+    display: none;
+}
+
+.menu-icono{
+    width: 25px;
+}
+
+.menu label{
+    cursor:pointer;
+    display: none;
+} 
+
+.text{
+    position:absolute;
+    width: 100%;
+    top:7%;
+    font-size: 20px;
+    padding-left: 250px;
+    padding-right: 250px;
+    font-weight: 600;
+    color: black;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Control de visibilidad del texto *//*
+.carruseles .slider-section:nth-child(1)  .text,
+.carruseles .slider-section:nth-child(2)  .text {
+    opacity: 1; /* Muestra el texto en las dos primeras imágenes *//*
+}
+
+.carruseles .slider-section:nth-child(3)  .text {
+    opacity: 0; /* Oculta el texto en la tercera imagen *//*
+}*/
+
+.cuerpo-text-parraf{
+    line-height: 1.25;
+}
+
+.btn-explora,
+.btn-verHV{
+    display: flex;
+    position:absolute;
+    top:85%;
+}
+
+.btn-explora,
+.btn-verHV, 
+.botonhab,
+.boton, 
+.botondos, 
+.boton3{
+    font-size: 20px;
+    border-radius: 13px;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #080e26;
+    background: rgb(240, 240, 240);
+    /*transform: translate(0,-50%);
+    transition: .5s ease;
+    user-select: none;*/
+    line-height: 1;
+    
+}
+
+.btn-explora:hover,
+.btn-verHV:hover, 
+.boton:hover, 
+.botondos:hover, 
+.boton3:hover, .botonhab:hover, .btn-2:hover, .btn-1:hover{
+    background: #768cbf;
+    color: rgb(240,240,240); transition: background 0.3s ease, color 0.3s ease; /* Suaviza la transición del color */
+}
+
+.btn-explora{
+    left: 150px;
+}
+
+.btn-verHV{
+    right: 150px;
+}
+
+
+footer{
+background: #080e26;
+width: 100%;
+text-align: center;
+height: 10vh;
+padding-top: 4vh;
+}
+
+footer .autor{
+    text-align: center;
+    }
+.autor{
+    color: rgb(240,240,240);
+}
+
+
+
+/*HOJA PERFIL*/
+
+.cuerpo{
+    display: flex;
+    width: 100%;
+    padding: 20px; /* Agrega algo de padding */
+    box-sizing: border-box; /* Incluye padding en el tamaño total */
+    /*overflow-x: hidden; no salga scroler horizontal*/
+    position: relative;
+    height: 99vh;
+   
+}
+
+.perfil{
+    width: 70%; /* Ocupa el 75% de la pantalla */
+    padding: 20px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluye el padding en el ancho */
+    height: 100%;
+  
+    /*transform: translate(0,-50%);
+    transition: .5s ease;
+    user-select: none;*/
+}
+
+.titulo, .tituloexp{
+    font-size: 30px;
+}
+
+.parrafo, .parrafoexp, .parrafoshab{
+    line-height: 1.6;
+}
+
+.per{
+    width: 30%; /* Ocupa el 25% de la pantalla */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */   
+    /*transform: translate(0,-50%);
+    transition: .5s ease;
+    user-select: none;*/
+}
+
+.imgPerfil img {
+    max-width: 100%; /* Asegura que la imagen no desborde su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    float: left;
+    object-fit: cover;
+}
+
+.titulo,
+.subtitulos,
+.parrafo {
+    padding-left: 110px; /* Espaciado interno */
+    color: rgb(240,240,240);
+}
+
+.boton{
+    display: flex;
+    position:absolute;
+    left: 50%; /* Mueve el elemento al 50% de la anchura del contenedor */
+    transform: translateX(-50%);
+    top:90%;
+}
+
+/*EXPERIENCIA*/
+.cuerpoExp{
+    width: 100%;
+    height: 110vh;
+    padding-top: 20px;
+    padding-left: 150px;
+    padding-right: 250px;
+    color:rgb(240,240,240);
+}
+
+.experiencia{ 
+    padding-top: 20px;
+}
+
+.subtituloexp{
+    padding-top: 10px;
+    font-size: 18px;
+}
+
+.parrafoexp{
+    padding-top: 4px;
+    font-size: 20px;
+}
+
+.parrafoexp ul{
+padding-left: 20px;
+}
+
+.botondos {
+    display: flex;
+    position:absolute;
+    left: 80%; /* Mueve el elemento al 50% de la anchura del contenedor */
+    transform: translateX(-80%);
+    top:113%;
+    padding: 10px;
+    width: 280px;
+}
+
+
+/*HABILIDADES*/
+ .cuerpohab{
+    width: 100%;
+    height: 95vh;
+    padding-top: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+ }
+
+.titulohab{
+    padding-bottom: 25px;
+    padding-left: 15px;
+    font-size: 23px;
+    color: rgb(240,240,240);
+}
+
+.subtituloshab{
+padding-bottom: 15px;
+font-size: 18px;
+color: rgb(240,240,240);
+}
+
+.parrafoshab{
+    font-size: 20px;
+    color: rgb(240,240,240);
+}
+
+.cuerpohab .habilidades{
+    display: flex;   
+}
+
+.parrafoshab ul{
+    padding-left: 20px;
+}
+
+.seccion1, .seccion2, .seccion3{
+    width: 33.3%;
+    padding: 15px;
+}
+
+.botonhab {
+    display: flex;
+    position:absolute;
+    left: 80%; /* Mueve el elemento al 50% de la anchura del contenedor */
+    transform: translateX(-80%);
+    top:100%;
+    padding: 10px;
+    width: 150px;
+}
+
+/*CONTACTO*/
+.cuerpocon{
+    width: 100%;
+    height: 105vh;
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.titulocon{
+    padding-top: 20px;
+    padding-bottom: 25px;
+    color: rgb(240,240,240);    
+    font-size: 23px;
+}
+
+.seccionuno{
+    line-height: 1.3;
+}
+
+.secciondos{
+    line-height: 1.1;
+}
+
+.contacto{
+    display: flex;
+    justify-content: space-between;
+}
+
+.seccionuno{
+    width: 45%;
+    float: left;
+}
+
+.seccionuno p, .seccionuno a{
+    font-size: 28px;
+}
+
+.correo, .redes, .telefono{
+    color: rgb(240,240,240);  
+    background: #768cbf;
+    padding: 15px 25px;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    width: 495px;
+}
+
+.seccionuno .mensaje{
+    font-size: 22px;
+    color: rgb(240,240,240);
+}
+
+.seccionuno a{
+    text-decoration: underline;
+    color: rgb(240,240,240);  
+}
+
+.secciondos{
+    width: 45%;
+    color: rgb(240,240,240); 
+    float: right;
+    padding: 20px;
+}
+
+.escribenos{
+    font-size: 25px;
+    color: rgb(240,240,240); 
+}
+
+.formulariocontacto{
+    border-radius: 8px;
+}
+
+.grupo, .bt{
+    padding-left:20px;
+    padding-top: 20px;
+}
+
+.etiqueta{
+    color: rgb(240,240,240); 
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.entrada{
+   display: block;
+   color: rgb(240,240,240);  
+   border-color: rgb(240,240,240); 
+   width: 75%;
+   padding: 5px;
+   background: #080e26;
+   font-family: Arial, Helvetica, sans-serif;
+    overflow: auto; /* Agregar barra de desplazamiento si el texto excede el área visible */
+    resize: none; /* Deshabilitar el cambio de tamaño */
+}

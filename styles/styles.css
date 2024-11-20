@@ -1,0 +1,791 @@
+/*
+@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap');*/
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    /* para alinear verticalmente 
+    /*justify-content: center;/* centrado de imagenes*/
+   background-color: #080e26;
+   box-sizing: border-box;
+    /*font-family: kadwa;*/
+
+   
+}
+
+h1,h2,p,a, li{
+    color: rgb(235,235,235);;
+}
+/*ok menu*/
+.header{
+    display:flex ;   
+    width: 100%;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 30px;
+}
+
+ul{
+    list-style: none;
+}
+
+.navbar ul{
+    display: flex;
+    gap: 40px;
+}
+
+.logo a{
+    font-size: 19px;
+    font-weight: bold;
+}
+.logo a:hover{
+    color: #768cbf;
+}
+.navbar a{
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.navbar a:hover{
+    color: #768cbf;
+}
+/*fin menu*/
+
+
+/*seccion menu*/
+.container-carousel{
+    position: relative;
+    height: 100vh;
+    /*border-radius: none;*/
+    overflow: hidden;
+
+}
+
+.carruseles{
+    width: 300%;/*(300 porque son 3 imagenes)para q ocupe el 100% del ancho del .cotainer-carousel*/
+    height: 100vh;/**/
+    display: flex;/*las imagenes se coloquen una al lado de la otra*/
+    animation: slide 10s infinite;
+}
+.slider-section {
+    width: calc(100%/3);/*el calculo del 100 del contenedor carruseles para las imagenes*/
+    height: 100%;
+}
+
+.slider-section img{
+    width:  100%;/*tomo el 100% de container carrusel*/
+    height: 100vh;    
+    object-fit: cover;/*para que la imagen no pierda calidad*/
+    /*border-radius: none;*/
+    }
+    .slider-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+        z-index: 1; /* Asegura que el gradiente esté sobre la imagen */
+        background-repeat: no-repeat;/*para que no se repita la imagen*/
+    background-size: cover;/*ocupe todo el espacio disponible*/
+    background-position: center center;/*para que se apreceie el centro de  la imagen*/
+    }
+    @keyframes slide {
+        0%, 20% { margin-left: 0%; }
+        33.33%, 53.33% { margin-left: -100%; }
+        66.66%, 86.66% { margin-left: -200%; }
+    }
+
+.text{
+    position: absolute;
+    top: 50px;
+    max-width: 100%;
+    display: flex;
+    font-size: 20px;
+    font-weight: 600;   
+    z-index: 500;   
+    color: #ffffff;
+}
+.text h1, .text p{
+    color:#080e26
+}
+.cuerpo-text h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+.cuerpo-text p{
+    font-size: 30px;
+}
+.cuerpo-text{
+    margin: 0px 90px;
+    width: 100%;
+}
+.btn-explora{
+    display: flex;
+    top:80vh;
+    position:absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 120px;
+    z-index: 500;
+}
+
+.btn-explora a{
+    display: flex;
+    color: #080e26;
+    min-width: 18%;
+    background-color: rgb(235,235,235);
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 20px;
+    justify-content: center;
+    transition: background-color 0.8s ease;
+    transition: transform 0.3s ease;
+    z-index: 500;
+}
+.btn-explora a:hover{
+    background-color: #080e26;
+    color: rgb(235,235,235);
+    transform: scale(1.1);
+}
+
+/*seccion footer*/
+.pie_pagina{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: rgb(235, 235, 235);
+}
+
+/*seccion perfil*/
+
+.pp{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    min-height: 82vh;
+}
+
+.title{
+    padding: 0 30px;
+    padding-bottom: 20px;
+    font-size: 31px;
+}
+
+.card-text h2{
+    padding-bottom: 7px;
+    font-size: 27px;
+}
+.card-text p{
+    padding-bottom: 20px;
+    line-height: 1.3;
+}
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    padding-left: 50px;
+    padding-top: 30px;
+    /*flex-wrap: wrap;*/
+}
+.card-text{
+    padding: 0 30px;
+}
+.imgPerfil{
+    width: 30%;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    min-height: 82vh; /* Opcional: para ocupar toda la pantalla con min*/
+    position: relative;
+}
+.imgPerfil img{
+    max-width: 100%;
+    object-fit: contain;
+    max-height: 100%;
+    position: relative;
+}
+
+.btn-exp a{
+    color: #080e26;
+    background-color: rgb(235,235,235);
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 20px;
+    transition: background-color 0.8s ease;
+    transition: transform 0.3s ease;
+/*solo use estas dos*/
+    font-weight: bold;
+   
+}
+
+.btn-exp a:hover{
+    background-color: #768cbf;
+    color: rgb(235,235,235);
+    transform: scale(1.1);
+}
+.botonperfil{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+.btn-exp{
+    display: flex;
+    width: 35%;
+    margin-left: auto;
+    margin-right: 20px;  
+}
+
+/*fin secccion experiencia*/
+
+.experiencia{
+    display: flex;
+    flex-direction: column;   
+    min-height: 82vh;
+    flex-direction: column;
+    width: 100%;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 40px;
+}
+
+.title-exp{
+    padding: 0 90px;
+    padding-bottom: 20px;
+    font-size: 31px;    
+}
+
+.card-text-exp h2{
+    padding-bottom: 7px;
+    font-size: 27px;
+}
+.card-text-exp p{
+    padding-bottom: 20px;
+    line-height: 1.3;
+}
+
+.card-text-exp li{ 
+    line-height: 1.3;
+}
+
+.card-text-exp{
+    padding: 0 90px;
+}
+
+.btn-exper a{
+    display: flex;
+    color: #080e26;
+    min-width: 24%;
+    background-color: rgb(235,235,235);
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 20px;
+    justify-content: center;
+    transition: background-color 0.8s ease;
+    transition: transform 0.3s ease;
+/*solo use estas dos*/
+    font-weight: bold;
+    float: right; 
+    margin: 5px;
+}
+.btn-exper a:hover{
+    background-color: #768cbf;
+    color: rgb(235,235,235);
+    transform: scale(1.1);
+}
+
+.btn-exper{
+    margin-bottom: 25px;
+    margin-right: 30px;
+}
+
+
+/*seccion habilidades*/
+
+.cuerpohab{
+    min-height: 82vh;
+    padding-right: 70px;
+    padding-left: 70px;
+    padding-top: 40px;
+}
+.habilidades{
+    display: flex;
+    width: 100%;
+    padding: 10px 0;  
+}
+.card-text-ha{
+max-width: 33%;
+}
+
+.title-hab{
+    padding: 0 20px;
+    padding-bottom: 20px;
+    font-size: 31px;
+}
+
+.card-text-ha h2{
+    padding-bottom: 7px;
+    font-size: 27px;
+}
+.card-text-ha p{
+    padding-bottom: 20px;
+    line-height: 1.3;
+}
+
+.card-text-ha li{
+    line-height: 1.3;
+}
+
+.card-text-ha{
+    padding: 20px 20px;
+}
+
+.btn-hab a{
+    color: #080e26;
+    min-width: 24%;
+    background-color: rgb(235,235,235);
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 20px;
+    justify-content: center;
+    transition: background-color 0.8s ease;
+    transition: transform 0.3s ease;
+/*solo use estas dos*/
+    font-weight: bold;
+    text-align: center;
+    margin-left: auto; /*ajusta a la derecha*/
+    /*justify-content: flex-end; /* Alinea los elementos hijos a la derecha */
+}
+.btn-hab a:hover{
+    background-color: #768cbf;
+    color: rgb(235,235,235);
+    transform: scale(1.1);
+}
+
+.btn-hab{
+    margin-bottom: 25px;
+    margin-right: 30px;
+   display: flex;
+   flex-direction: row;
+}
+
+/*contacto*/
+
+.cuerpocon{
+    width: 100%;
+    min-height: 82vh;
+    padding-top: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.contacto{
+    display: flex;
+    width: 100%;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 20px;  
+    justify-content: space-between;
+}
+.card-text-cont{
+    max-width: 45%;
+}
+
+.title-cont{
+    margin-left:  58px;
+    padding-bottom: 10px;
+    font-size: 28px;    
+}
+
+.correo, .redes, .telefono{
+    color: rgb(235,235,235); 
+    background: #768cbf;
+    padding: 15px 25px;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    max-width: 90%;
+}
+
+
+.escribenos{
+    font-size: 25px;
+    color: rgb(235,235,235);
+}
+
+.card-text-cont-1 a{
+    text-decoration: underline;
+    color: rgb(235,235,235); 
+}
+
+.card-text-cont-1 p, .card-text-cont-2 a{
+    font-size: 28px;
+}
+.card-text-cont-1{
+   /* line-height: 1.3;*/
+    width: 47%;
+    float: left;
+    height: 76%;
+}
+
+.msg p{
+    font-size: 16px;
+    width: 91%;
+}
+
+.card-text-cont-2{
+    /* line-height: 1.1;*/
+     width: 47%;
+     color: rgb(235,235,235);
+     float: right;
+     height: 76%;
+ }
+
+/*revisar.mensaje*/
+.card-text-cont-1 .mensaje{
+    font-size: 22px;
+    color: rgb(235,235,235);
+}
+
+.formulariocontacto{
+    border-radius: 8px;
+}
+.etiqueta{
+    color: rgb(235,235,235);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.entrada{
+    display: block;
+    color: rgb(235,235,235); 
+    border-color: rgb(240,240,240); 
+    width: 75%;
+    padding: 5px;
+    background: #080e26;
+    font-family: Arial, Helvetica, sans-serif;
+     overflow: auto; /* Agregar barra de desplazamiento si el texto excede el área visible *//*
+     resize: none; /* Deshabilitar el cambio de tamaño */
+ }
+ .grupo, .bt{
+    padding-left:10px;
+    padding-top: 10px;
+}
+
+.boton3{
+    font-size: 20px;
+    border-radius: 13px;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #080e26;
+    background: rgb(240, 240, 240);
+    /*transform: translate(0,-50%);
+    transition: .5s ease;
+    user-select: none;*/
+    line-height: 1;
+    
+}
+
+.boton3:hover{
+    background: #768cbf;
+    color: rgb(235,235,235);
+    transition: background 0.3s ease, color 0.3s ease; /* Suaviza la transición del color */
+}
+
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+   /*home*/
+   .cuerpo-text h1 {
+    font-size: 30px;
+}
+.cuerpo-text p{
+    font-size: 20px;
+}
+.cuerpo-text{
+    margin: 0px 50px;
+}
+
+ /*perfil*/
+    .cuerpo{
+        max-width: 65%;
+        padding-left: 35px;
+    }
+    .card-text{
+        padding: 0 30px;
+    }
+    .imgPerfil{
+        width: 35%;
+    }
+   
+
+/*experiencia*/
+.experiencia{
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+/*contacto*/
+    .cuerpocon{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 45px;
+    }
+    
+    .contacto{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+ 
+    .card-text-cont-1 p, .card-text-cont-2 a{
+        font-size: 24px;  
+    }
+
+    .card-text-cont-1{
+        width: 47%;
+        float: left;
+        height: 76%;
+    }
+    
+    .msg p{
+        font-size: 16px;
+        width: 91%;
+    }
+    
+    .card-text-cont-2{
+         width: 47%;
+         color: rgb(235,235,235);
+         float: right;  
+         height: 76%;
+     }
+    
+   /*habilidades*/  
+.cuerpohab{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.habilidades{
+    padding: 10px 0;
+    justify-content: space-between;    
+}
+
+.card-text-ha{ 
+    max-width: 33%;
+border: 1px solid black;
+    padding: 20px 10px;
+}
+.card-text-ha h2{
+    margin-bottom: 15px;
+}  
+}
+@media (min-width: 400px) and (max-width: 479px) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+    /*menu*/
+    .header{
+        flex-direction: column;
+    }
+    .logo{
+        padding-bottom: 7px;
+    }
+
+    .navbar ul{  
+        gap: 21px;
+    }
+    .logo a{
+        font-size: 18px;         
+    }
+
+   /*home*/
+
+
+.cuerpo-text h1 {
+    font-size: 30px;
+}
+.cuerpo-text p{
+    font-size: 20px;
+}
+.cuerpo-text{
+    margin: 0px 30px;
+
+}
+.btn-explora{
+    padding: 0px 34px;
+}
+
+.btn-explora a{
+    max-width: 40%;
+    padding: 8px 8px;
+    font-size: 18px;
+}
+
+/*contacro*/
+    .title{
+        padding: 0 10px;
+        padding-bottom: 18px;
+        font-size: 28px;
+    }
+    
+    .cuerpo{
+        max-width: 60%;
+        padding-left: 10px;
+        padding-top: 30px;
+    }
+    .card-text{
+        padding: 0 10px;    
+    }
+    .imgPerfil{
+        width: 40%;  
+    }
+    .imgPerfil img{ 
+        max-width: 100%;  
+    }
+    
+    .btn-exp a{
+        padding: 10px 6px;
+        font-size: 17px;            
+    }
+    
+    .btn-exp{
+        width: 45%;
+    }
+
+/*experiencia*/
+
+.experiencia{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.title-exp{
+    padding: 0 40px;
+    padding-bottom: 20px;
+    font-size: 28px; 
+}
+
+.card-text-exp{
+    padding: 0 40px;
+}
+
+/*seccion habilidades*/
+.cuerpohab{
+    padding-right: 35px;
+    padding-left: 35px; 
+}
+.habilidades{
+    flex-direction: column; 
+}
+.card-text-ha{
+max-width: 100%;
+}
+
+.title-hab{
+    font-size: 28px; 
+}
+
+.card-text-ha h2{
+    font-size: 27px;
+    margin-bottom: 15px; 
+}
+
+/*contacto*/
+    .cuerpocon{
+        padding-top: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .contacto{
+       padding-top: 30px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+   
+    .contacto .card-text-cont-1 a{
+        font-size: 0.8em; 
+    }
+
+    .card-text-cont-1 p{
+        font-size: 18px;
+    }
+    
+    .title-cont{
+        font-size: 25px;  
+    }
+
+    .card-text-cont-2 h2{
+        font-size: 20px;
+    }
+ 
+    .correo, .redes, .telefono{
+        padding: 8px 8px;
+        max-width: 96%;
+    }
+    
+    
+    .escribenos{
+        font-size: 25px;
+        color: rgb(235,235,235);
+    }
+
+    .card-text-cont-1{
+        width: 49%;
+    }
+    
+    .msg p{
+        font-size: 14px;
+        width: 96%;
+    }
+    
+    .card-text-cont-2{
+         width: 49%;
+     }
+
+    .formulariocontacto{
+        border-radius: 8px;
+    }
+    .etiqueta{
+        font-size: 18px;
+    }
+    
+    .boton3{
+        font-size: 18px;
+        padding: 4px 8px;
+    }
+
+}
